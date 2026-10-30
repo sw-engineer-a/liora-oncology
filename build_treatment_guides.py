@@ -1387,6 +1387,9 @@ def main():
             "treatment_3": w3,
         })
 
+    from extra_female_guides import extra_rows
+    out_rows.extend(extra_rows())
+
     fields = list(out_rows[0].keys())
     with OUT.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
